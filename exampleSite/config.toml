@@ -6,7 +6,7 @@ theme = "hugo-theme-alt-terminal"
 
 [params]
   contentTypeName = "post"
-  themeColor = "orange"
+  themeColor = "turquoise"
   showMenuItems = 2
   fullWidthTheme = false
   centerTheme = false
