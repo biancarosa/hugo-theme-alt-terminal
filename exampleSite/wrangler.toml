@@ -1,0 +1,6 @@
+name = "hugo-theme-alt-terminal"
+compatibility_date = "2025-01-22"
+pages_build_output_dir = "public"
+
+[build]
+command = "hugo"
