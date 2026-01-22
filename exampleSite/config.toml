@@ -1,7 +1,8 @@
 baseurl = "https://example.com/"
 languageCode = "en-us"
 theme = "hugo-theme-terminal"
-paginate = 5
+[pagination]
+  pagerSize = 5
 
 [params]
   contentTypeName = "post"
@@ -9,6 +10,29 @@ paginate = 5
   showMenuItems = 2
   fullWidthTheme = false
   centerTheme = false
+
+  [[params.rightSideSections]]
+    title = "Featured"
+    [[params.rightSideSections.cards]]
+      label = "New"
+      badge = "v2"
+      title = "Alternative Terminal Theme"
+      description = "A simple, retro theme for Hugo with customizable colors and layouts."
+      buttonText = "Get Started"
+      buttonUrl = "https://github.com/biancarosa/hugo-theme-alternative-terminal"
+    [[params.rightSideSections.cards]]
+      label = "New"
+      badge = "v2"
+      title = "Terminal Theme"
+      description = "A simple, retro theme for Hugo with customizable colors and layouts."
+      buttonText = "Get Started"
+      buttonUrl = "https://github.com/panr/hugo-theme-terminal"
+    [[params.rightSideSections.cards]]
+      label = "Documentation"
+      title = "Theme Guide"
+      description = "Learn how to customize your site with configuration options and partials."
+      buttonText = "Read Docs"
+      buttonUrl = "https://github.com/panr/hugo-theme-terminal#readme"
 
 [languages]
   [languages.en]

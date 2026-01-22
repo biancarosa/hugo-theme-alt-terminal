@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+.right-side {
+  padding: 40px;
+  max-width: 300px;
+  min-height: 100vh;
+  border-right: none;
+}
+
+@media (max-width: 683px) {
+  body {
+    flex-direction: column;
+  }
+
+  .right-side {
+    max-width: 100%;
+    min-height: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}

@@ -1,8 +1,9 @@
 {
-  "name": "terminal",
+  "name": "alt-terminal",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Radosław Kozieł <@panr> <radoslaw.koziel@gmail.com>",
+  "author": "Bianca Rosa <@biancarosa> <me@biancarosa.com.br>",
+  "description": "Hugo theme based on the terminal theme by @panr but with enough modifications it made sense to be a new theme.",
   "license": "MIT",
   "scripts": {
     "dev": "webpack --mode=development --watch",
@@ -53,5 +54,8 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "yarn": "^1.22.22"
   }
 }

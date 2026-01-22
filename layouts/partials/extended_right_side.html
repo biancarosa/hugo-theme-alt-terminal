@@ -1,4 +1,60 @@
 <!--
-To add an extended right side section, please create
-`layouts/partials/extended_right_side.html` in your Hugo directory.
+To add an extended right side section, you can either:
+1. Create `layouts/partials/extended_right_side.html` in your Hugo directory
+2. Or configure rightSideSections in your config.toml:
+
+[params]
+  [[params.rightSideSections]]
+    title = "My Section"
+    icon = "icon-class" # optional
+    [[params.rightSideSections.cards]]
+      label = "FREE"
+      badge = "NEW"
+      title = "Card Title"
+      description = "Card description"
+      buttonText = "Learn More"
+      buttonUrl = "https://example.com"
+      footer = "Optional footer text"
 -->
+
+{{ with $.Site.Params.rightSideSections }}
+  {{ range . }}
+    <div class="right-side-section">
+      {{ if or .title .icon }}
+        <div class="right-side-section__header">
+          {{ with .icon }}<span class="{{ . }}"></span>{{ end }}
+          {{ with .title }}<span>{{ . }}</span>{{ end }}
+        </div>
+      {{ end }}
+
+      {{ range .cards }}
+        <div class="right-side-card">
+          {{ if or .label .badge }}
+            <div class="right-side-card__label">
+              <span>{{ .label }}</span>
+              {{ with .badge }}<span class="right-side-card__badge">{{ . }}</span>{{ end }}
+            </div>
+          {{ end }}
+
+          {{ with .title }}
+            <div class="right-side-card__title">{{ . }}</div>
+          {{ end }}
+
+          {{ with .description }}
+            <div class="right-side-card__description">{{ . }}</div>
+          {{ end }}
+
+          {{ if and .buttonText .buttonUrl }}
+            <a href="{{ .buttonUrl }}" class="right-side-card__button" {{ if strings.HasPrefix .buttonUrl "http" }}target="_blank" rel="noopener"{{ end }}>
+              {{ .buttonText }}
+            </a>
+          {{ end }}
+
+          {{ with .footer }}
+            <div class="right-side-card__footer">{{ . }}</div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}

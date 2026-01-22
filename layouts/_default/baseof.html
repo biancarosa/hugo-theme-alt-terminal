@@ -13,17 +13,21 @@
 
   {{ partial "header.html" . }}
 
-  <div class="content">
-    {{ block "main" . }}
-    {{ end }}
+  <div class="main-with-sidebar">
+    <div class="content">
+      {{ block "main" . }}
+      {{ end }}
+
+      {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+      {{ end }}
+    </div>
+
+    <div class="right-side">
+      {{ partial "extended_right_side.html" . }}
+    </div>
   </div>
 
-  {{ block "footer" . }}
-    {{ partial "footer.html" . }}
-  {{ end }}
-</div>
-<div class="{{- $container -}}{{" right-side "}}">
-  {{ partial "extended_right_side.html" . }}
 </div>
 </body>
 </html>
